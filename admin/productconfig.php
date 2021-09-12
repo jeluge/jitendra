@@ -6,10 +6,12 @@ if(isset($_POST['type']) && $_POST['type']){
         $product_name=$_POST['product_name'];
         $product_description=$_POST['product_description'];
         $product_price=$_POST['product_price'];
-        $sql="UPDATE product SET product_name='$product_name',product_description='$product_description',product_price='$product_price' WHERE product_id=".$product_id;
+        $category_id = $_POST['category'];
+
+        $sql="UPDATE product SET product_name='$product_name',product_description='$product_description',product_price='$product_price',category_id='$category_id' WHERE product_id=".$product_id;
 			$result=mysqli_query($conn,$sql);
 			if($result){
-                header('location:adding.php?product_id='.$product_id.'&type=edit'."&error=0");
+                header('location:adding.php?product_id='.$product_id.'&type=edit'."&error=0".'&category_id='.$category_id);
 				exit();
             }
     }
@@ -17,11 +19,12 @@ if(isset($_POST['type']) && $_POST['type']){
         $product_name=$_POST['product_name'];
         $product_description=$_POST['product_description'];
         $product_price=$_POST['product_price'];
-        $sql="INSERT INTO product(product_name,product_description,product_price) VALUES('$product_name','$product_description','$product_price')";
+        $category_id = $_POST['category'];
+        $sql="INSERT INTO product(product_name,product_description,product_price,category_id) VALUES('$product_name','$product_description','$product_price','$category_id')";
 				$result=mysqli_query($conn,$sql);
 				$product_id = mysqli_insert_id($conn);
 				if($result){
-					header('location:adding.php?product_id='.$product_id.'&success=1&type=edit');
+					header('location:adding.php?product_id='.$product_id.'&category_id='.$category_id.'&success=1&type=edit');
 					exit();
                 }
     }
