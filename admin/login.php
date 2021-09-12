@@ -1,5 +1,6 @@
 <?php
 require 'templates/header.php';
+require 'inc/config.php';
 ?>
 <form action = "inc/loginconfig.php" method = "post">
     <label>Email  :</label><input type = "text" name = "email" class = "box"/><br /><br />

@@ -1,6 +1,7 @@
 <?php
 require "inc/config.php";
 require 'templates/header.php';
+check_user_loggedin();
 
 $product_id = '';
 $product_name ='';

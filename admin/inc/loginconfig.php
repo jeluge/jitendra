@@ -13,7 +13,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 			if($email == $row['a_email'] && $password == $row['a_pass']){
                 echo"match";
 				$user_id = $row['a_id'];
-                setcookie('user_logged_in', md5($user_id), COOKIE_TIME, "/");
+                setcookie('user_logged_in', ($user_id), COOKIE_TIME, "/");
 				setcookie('user_id', $user_id, COOKIE_TIME, "/");
 				header('location:../dashboard.php');
 				exit();

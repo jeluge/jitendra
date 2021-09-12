@@ -1,6 +1,7 @@
 <?php
 require 'inc/config.php';
 require 'templates/header.php';
+check_user_loggedin();
 
 ?>
 <a href="adding_cat.php">Add Categories</a>

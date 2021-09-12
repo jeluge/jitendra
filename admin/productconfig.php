@@ -1,5 +1,7 @@
 <?php
 require "inc/config.php";
+check_user_loggedin();
+
 if(isset($_POST['type']) && $_POST['type']){
     if($_POST['type'] = 'edit'){
         $product_id=$_POST['product_id'];

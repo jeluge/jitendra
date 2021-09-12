@@ -1,5 +1,6 @@
 <?php
 require "inc/config.php";
+check_user_loggedin();
 
 if(isset($_POST['upload_image'])){
 	$product_id=$_POST['product_id'];

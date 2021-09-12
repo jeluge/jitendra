@@ -1,6 +1,7 @@
 <?php
 require 'inc/config.php';
 require 'templates/header.php';
+check_user_loggedin();
 ?>
 <a href="adding.php">Add Product</a>
 <a href="category.php">Categories</a>

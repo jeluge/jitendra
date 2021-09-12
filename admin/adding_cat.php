@@ -1,6 +1,7 @@
 <?php
 require 'inc/config.php';
 require 'templates/header.php';
+check_user_loggedin();
 
 $type="add";
 $category_id="";
